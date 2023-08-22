@@ -13,11 +13,6 @@
 ## 测试成果
 在 8 核 16 G 的环境下测试，该引擎存储效率较 MySQL 提升了 29.04%。（数据量不大）
 
-## 实现语言及知识点
-<img src="https://img.shields.io/badge/Java-100%25-yellowgreen" /> <img src="https://img.shields.io/badge/%E6%9E%B6%E6%9E%84-LSM-orange" /> <img src="https://img.shields.io/badge/%E5%86%85%E5%AD%98-Skip%20List-important" /> <img src="https://img.shields.io/badge/%E7%A3%81%E7%9B%98-SSTable-yellow" />
-<img src="https://img.shields.io/badge/%E7%B4%A2%E5%BC%95-%E7%BA%A2%E9%BB%91%E6%A0%91%E7%BB%93%E6%9E%84%EF%BC%8C%E7%A8%80%E7%96%8F%E7%B4%A2%E5%BC%95%E5%AD%98%E5%82%A8-blue" />
-<img src="https://img.shields.io/badge/%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9-snappy-brightgreen" />
-
 ## 项目结构
 * [constant](src%2Fmain%2Fjava%2Fcom%2Fcqupt%2Fkvstore%2Fconstant) 包下是一些抽离出来的可配置常量，便于维护。
 * [model](src%2Fmain%2Fjava%2Fcom%2Fcqupt%2Fkvstore%2Fmodel) 包下的 [commond](src%2Fmain%2Fjava%2Fcom%2Fcqupt%2Fkvstore%2Fmodel%2Fcommond) 包中是几种不同的命令对象，其中定义 [Command.java](src%2Fmain%2Fjava%2Fcom%2Fcqupt%2Fkvstore%2Fmodel%2Fcommond%2FCommand.java) 来规范命令对象的行为， [AbstractCommand.java](src%2Fmain%2Fjava%2Fcom%2Fcqupt%2Fkvstore%2Fmodel%2Fcommond%2FAbstractCommand.java) 为了方便复用，在这种追加写模式的存储引擎中，set 操作可以实现增、改。
